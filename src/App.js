@@ -16,9 +16,9 @@ class App extends Component {
 
   render(){
     return (
-    <div>
-      <button onClick={() => this.clickButton()}> {this.state.times} likes </button>
-    </div>
+      <div>
+        <button onClick={() => this.clickButton()}> {this.state.times} likes </button>
+      </div>
     )
   }
 };
