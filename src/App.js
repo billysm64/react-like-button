@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.clickButton = this.clickButton.bind(this);
+    this.state = {
+      times: 0
+    }
+  }
+
+  clickButton(){
+    this.setState({ times: this.state.times + 1 });
+  }
+
+  render(){
+    console.log(this.state.times)
+    return (
+    <div>
+      <button className="btnStyle" onClick={() => this.clickButton()}> {this.state.times} likes </button>
     </div>
-  );
-}
+    )
+  }
+};
 
 export default App;
